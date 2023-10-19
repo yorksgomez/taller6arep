@@ -1,0 +1,11 @@
+CREATE DATABASE bd;
+USE bd;
+
+CREATE TABLE users(id INT PRIMARY KEY AUTO_INCREMENT, username VARCHAR(250), password VARCHAR(250));
+
+CREATE TABLE todos (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT,
+    value VARCHAR(255),
+    FOREIGN KEY (user_id) REFERENCES users(id)
+);
